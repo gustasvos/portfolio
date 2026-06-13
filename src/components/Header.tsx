@@ -72,9 +72,9 @@ export default function Header() {
                     ))}
                 </ul>
             </nav>
-
+            <div className="navbar-end"></div>
             {/* Theme switcher */}
-            <div className="navbar-end">
+            {/* <div className="navbar-end">
                 <div className="dropdown dropdown-end">
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-sm font-mono text-xs gap-1">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -97,7 +97,7 @@ export default function Header() {
                         ))}
                     </ul>
                 </div>
-            </div>
+            </div> */}
         </header>
     )
 }
