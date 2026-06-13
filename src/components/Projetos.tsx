@@ -5,9 +5,10 @@ interface Projeto {
     descricao: string
     desafio: string
     solucao?: string
-    techs: string[]
+    hardSkills: string[]
+    softSkills?: string[]
     repo: string
-    media?: string // caminho pra imagem, gif ou video
+    media?: string
 }
 
 const projetos: Projeto[] = [
@@ -15,22 +16,32 @@ const projetos: Projeto[] = [
         titulo: "Controle de Projetos e Apontamentos de Horas - GSW",
         descricao:
             `Plataforma para gerenciamento de equipes de desenvolvimento, inspirada no PSOffice e Jira. 
-            Suporta níveis de acesso para gestores, área financeira e desenvolvedores, com criação de tasks e apontamento de horas.`,
+            Suporta níveis de acesso para gestores, área financeira e desenvolvedores, com criação de tasks e apontamento de horas.
+            O trabalho foi realizado para solucionar um problema apresentado pela empresa de Software GSW. 
+            
+            Minha participação neste projeto foi principalmente no desenvolvimento Backend com Spring, com a criação do microsserviço de apontamentos,
+            a implementação das filas de mensageria dos 3 serviços com RabbitMQ, e na criação do ambiente de desenvolvimento
+            Docker Compose com todos os serviços e bancos de dados do projeto.
+
+            Também desenvolvi desenvolvi telas relacionadas a visualização e edição dos projetos pelo gestor,
+            e a integração dessas e de outras telas no Frontend.`,
         desafio:
-            "Arquitetura em microsserviços autônomos e independentes, com autenticação centralizada via Keycloak.",
-        techs: ["Java", "Spring Boot", "Keycloak", "MySQL", "MongoDB", "Docker", "React", "TailwindCSS", "DaisyUI"],
+            "Implementação da arquitetura em microsserviços; Comunicação entre serviços por mensageria; Autenticação via Keycloak.",
+        hardSkills: ["Java", "Spring Boot", "RabbitMQ", "MySQL", "MongoDB", "Docker", "React", "TailwindCSS", "DaisyUI"],
+        softSkills: ["SCRUM", "Metodologia Agíl", "Gestão de projeto em equipe", "Gestão de tempo", "Comunicação"],
         repo: "https://github.com/fatec-api/java-the-hutt",
-        // media: "/demos/jira-clone-demo.mp4",
+        media: "/api-gsw.gif"
     },
     {
         titulo: "Plataforma de Gestão Integrada — CRM Newe Logística",
         descricao:
             "Sistema Web CRM para gestão dos processos em uma empresa de logística (Newe). O site contempla seções para gerenciar os setores administrativo, comercial e operacional.",
         desafio:
-            "Gerenciamento de sessões de usuários simultaneamente; triggers para ações em tempo real no banco; geração de relatórios em PDF e CSV a partir de dados do próprio sistema.",
-        techs: ["Node.js", "MySQL", "TypeORM", "React", "TailwindCSS"],
+            "Gerenciamento de sessões de usuários simultaneamente; triggers para ações em tempo real no banco; Geração de relatórios em PDF e CSV a partir de dados do próprio sistema.",
+        hardSkills: ["Node.js", "MySQL", "TypeORM", "React", "TailwindCSS"],
+        softSkills: ["SCRUM", "Metodologia Agíl", "Gestão de projeto em equipe", "Gestão de tempo"],
         repo: "https://github.com/gustasvos/kingfisher-fatec-api",
-        // media: "/demos/newe-demo.gif",
+        media: "/api-newe.png"
     },
     {
         titulo: "Visualização de Dados do ComexStat",
@@ -38,9 +49,10 @@ const projetos: Projeto[] = [
             "Site com visualização dos dados do comércio exterior dos municípios paulistas. Apresenta dados tratados e filtrados em gráficos para facilitar a análise por período.",
         desafio:
             "Tratamento e processamento de grandes volumes de dados sem comprometer a performance do site.",
-        techs: ["Python", "Pandas", "Flask", "HTML5", "CSS3"],
+        hardSkills: ["Python", "Pandas", "Flask", "HTML5", "CSS3"],
+        softSkills: ["SCRUM", "Metodologia Agíl", "Gestão de projeto em equipe", "Gestão de tempo"],
         repo: "https://github.com/gustasvos/API-Crows",
-        // media: "/demos/comex-demo.gif",
+        media: "/api-comex.gif"
     },
 ]
 
@@ -84,7 +96,7 @@ function MediaPlaceholder({ src, titulo }: { src?: string; titulo: string }) {
         <img
             src={src}
             alt={`Demo: ${titulo}`}
-            className="w-full h-full object-cover rounded-xl"
+            className="w-full h-full object-contain rounded-xl"
         />
     )
 }
@@ -127,30 +139,49 @@ export default function Projetos() {
                                 </div>
 
                                 {/* Descrição */}
-                                <p className="text-sm text-base-content/70 leading-relaxed">
-                                    {projeto.descricao}
-                                </p>
+                                <div className="text-sm text-base-content/70 leading-relaxed space-y-2">
+                                    {projeto.descricao.split(/\n\s*\n/).map((paragrafo, i) => (
+                                        <p key={i}>{paragrafo.replace(/\s+/g, " ").trim()}</p>
+                                    ))}
+                                </div>
+
 
                                 {/* Desafio técnico */}
                                 <div className="border-l-2 border-primary/30 pl-3">
                                     <p className="font-mono text-xs text-primary/60 uppercase tracking-wide mb-1">
-                                        desafio técnico
+                                        desafios técnicos
                                     </p>
                                     <p className="text-sm text-base-content/60 leading-relaxed">
                                         {projeto.desafio}
                                     </p>
                                 </div>
 
-                                {/* Techs */}
-                                <div className="flex flex-wrap gap-1.5">
-                                    {projeto.techs.map(tech => (
-                                        <span
-                                            key={tech}
-                                            className="badge badge-outline badge-sm font-mono text-xs"
-                                        >
-                                            {tech}
-                                        </span>
-                                    ))}
+                                {/* Skills */}
+                                <div className="space-y-2">
+                                    <p className="font-mono text-xs text-base-content/40 uppercase tracking-wide">
+                                        hard skills
+                                    </p>
+                                    <div className="flex flex-wrap gap-1.5">
+                                        {projeto.hardSkills.map(tech => (
+                                            <span key={tech} className="badge badge-outline badge-sm font-mono text-xs">
+                                                {tech}
+                                            </span>
+                                        ))}
+                                    </div>
+                                    {projeto.softSkills && projeto.softSkills.length > 0 && (
+                                        <>
+                                            <p className="font-mono text-xs text-base-content/40 uppercase tracking-wide pt-1">
+                                                soft skills
+                                            </p>
+                                            <div className="flex flex-wrap gap-1.5">
+                                                {projeto.softSkills.map(skill => (
+                                                    <span key={skill} className="badge badge-outline badge-sm font-mono text-xs">
+                                                        {skill}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                        </>
+                                    )}
                                 </div>
                             </div>
 
@@ -188,11 +219,10 @@ export default function Projetos() {
                                                 key={i}
                                                 onClick={() => setAtual(i)}
                                                 aria-label={`Ir para projeto ${i + 1}`}
-                                                className={`w-1.5 h-1.5 rounded-full transition-all duration-200 ${
-                                                    i === atual
-                                                        ? "bg-primary w-4"
-                                                        : "bg-base-content/25 hover:bg-base-content/50"
-                                                }`}
+                                                className={`w-1.5 h-1.5 rounded-full transition-all duration-200 ${i === atual
+                                                    ? "bg-primary w-4"
+                                                    : "bg-base-content/25 hover:bg-base-content/50"
+                                                    }`}
                                             />
                                         ))}
                                     </div>

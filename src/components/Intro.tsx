@@ -1,6 +1,6 @@
-import profile_photo from "../assets/profile_photo.jpg"
-
 export default function Intro() {
+
+    const idade = new Date().getFullYear() - 2000 - 1
 
     return (
         <section
@@ -16,7 +16,6 @@ export default function Intro() {
                         // sobre mim
                     </p>
 
-                    {/* nome em linha de comando */}
                     <h1 className="font-mono text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
                         <span className="text-base-content/40 mr-2">&gt;</span>
                         <span>Gustavo Ribeiro da Rosa</span>
@@ -25,15 +24,15 @@ export default function Intro() {
 
                     {/* Subtítulo */}
                     <p className="font-mono text-sm text-primary/80">
-                        Desenvolvedor de Software · 25 anos · São José dos Campos, SP
+                        Desenvolvedor de Software · {idade} anos · São José dos Campos, SP
                     </p>
 
                     {/* Bio */}
                     <p className="text-base-content/80 leading-relaxed max-w-xl">
                         Estudante de Desenvolvimento de Software Multiplataforma na Fatec SJC,
-                        atualmente focado em tecnologias Backend e Banco de Dados.<br />
-                        <strong className="text-base-content">Objetivo Profissional: </strong>Desenvolvedor Backend com interesse em
-                        APIs REST,
+                        atualmente focado em tecnologias Backend e Banco de Dados.<br /><br/>
+                        <strong className="text-base-content">Objetivo Profissional:</strong> Desenvolvedor Backend com interesse em desenvolvimento de
+                        APIs REST e gerenciamento de banco de dados SQL e NoSQL
                     </p>
 
                     {/* Contatos */}
@@ -51,7 +50,7 @@ export default function Intro() {
                             GitHub
                         </a>
                         <a
-                            href="https://linkedin.com/in/gustavo-rosa"
+                            href="https://www.linkedin.com/in/gustavo-rosa-46a251180/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="btn btn-outline btn-primary btn-sm font-mono gap-2"
@@ -62,8 +61,8 @@ export default function Intro() {
                             LinkedIn
                         </a>
                         <a
-                            href="mailto:gustavo@email.com"
-                            className="btn btn-ghost btn-sm font-mono gap-2"
+                            href="mailto:gustavorib.rosa@gmail.com"
+                            className="btn btn-outline btn-primary btn-sm font-mono gap-2"
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -79,7 +78,7 @@ export default function Intro() {
                         {/* Decoração: borda com offset */}
                         <div className="absolute -inset-1 rounded-2xl border border-primary/30 translate-x-2 translate-y-2" />
                         <img
-                            src={profile_photo}
+                            src="/profile_photo.jpg"
                             alt="Gustavo Rosa"
                             className="relative w-48 h-48 lg:w-64 lg:h-64 object-cover rounded-2xl"
                         />

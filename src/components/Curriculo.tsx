@@ -56,7 +56,7 @@ export default function Curriculo() {
                         <TimelineItem
                             title="Desenvolvimento de Software Multiplataforma"
                             subtitle="Fatec São José dos Campos"
-                            period="2025 – 2027 · Em andamento"
+                            period="2025 - 2027 · Em andamento"
                         />
                     </div>
 
@@ -66,7 +66,7 @@ export default function Curriculo() {
                         <TimelineItem
                             title="Estagiário de Desenvolvimento Backend"
                             subtitle="nave.rs · Ruby on Rails"
-                            period="Jan – Ago 2022"
+                            period="Jan - Ago 2022"
                             last
                         />
                     </div>
@@ -74,7 +74,7 @@ export default function Curriculo() {
                     {/* currículo */}
                     <a
                         className="btn btn-outline btn-primary btn-sm font-mono gap-2 w-fit"
-                        href="src/assets/gustavo-curriculo.pdf"
+                        href="/gustavo-curriculo.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
                     >

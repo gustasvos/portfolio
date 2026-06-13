@@ -2,9 +2,9 @@ import { useEffect, useState } from "react"
 
 const navLinks = [
     { label: "Intro", href: "#intro" },
-    { label: "Currículo", href: "#curriculo" },
+    { label: "Currículo e Habilidades", href: "#curriculo" },
     { label: "Projetos", href: "#projetos" },
-    { label: "Contato", href: "#contato" },
+    { label: "Eventos", href: "#eventos" }
 ]
 
 const themes = [
@@ -22,13 +22,19 @@ export default function Header() {
         return () => window.removeEventListener("scroll", onScroll)
     }, [])
 
+    useEffect(() => {
+        const savedTheme = localStorage.getItem("theme")
+        if (savedTheme) {
+            document.documentElement.setAttribute("data-theme", savedTheme)
+        }
+    }, [])
+
     return (
         <header
-            className={`navbar fixed top-0 z-50 transition-all duration-300 ${
-                scrolled
-                    ? "bg-base-100/80 backdrop-blur-md shadow-md"
-                    : "bg-transparent"
-            }`}
+            className={`navbar fixed top-0 z-50 transition-all duration-300 ${scrolled
+                ? "bg-base-100/80 backdrop-blur-md shadow-md"
+                : "bg-transparent"
+                }`}
         >
             {/* Mobile: hamburger */}
             <div className="navbar-start">
@@ -72,9 +78,9 @@ export default function Header() {
                 <div className="dropdown dropdown-end">
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-sm font-mono text-xs gap-1">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m8.66-13l-.87.5M4.21 17.5l-.87.5M20.66 17.5l-.87-.5M4.21 6.5l-.87-.5M21 12h-1M4 12H3" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
                         </svg>
-                        tema
+                        Temas
                     </div>
                     <ul tabIndex={-1} className="dropdown-content bg-base-200 rounded-box z-50 w-40 p-2 shadow-xl border border-base-300 mt-2">
                         {themes.map(t => (
@@ -85,6 +91,7 @@ export default function Header() {
                                     className="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start font-mono text-xs"
                                     aria-label={t.label}
                                     value={t.value}
+                                    onChange={() => localStorage.setItem("theme", t.value)}
                                 />
                             </li>
                         ))}
