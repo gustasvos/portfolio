@@ -19,16 +19,23 @@ const projetos: Projeto[] = [
             Suporta níveis de acesso para gestores, área financeira e desenvolvedores, com criação de tasks e apontamento de horas.
             O trabalho foi realizado para solucionar um problema apresentado pela empresa de Software GSW. 
             
-            Minha participação neste projeto foi principalmente no desenvolvimento Backend com Spring, com a criação do microsserviço de apontamentos,
-            a implementação das filas de mensageria dos 3 serviços com RabbitMQ, e na criação do ambiente de desenvolvimento
-            Docker Compose com todos os serviços e bancos de dados do projeto.
+            O projeto foi desenvolvido em equipe com a metodologia Scrum, portanto foram executados os principais artefatos:
+            Backlog de Produto, Sprint Planning, Backlog da Sprint, Daily Meetings e Sprint Review. 
+            
+            Como membro do Dev Team contribui na definição e previsão de conclusão das tarefas, 
+            na escolha das tecnologias utilizadas e na documentação do padrão de projeto para a linguagem Java.
+            Durante as sprints mantive a comunicação com a equipe sobre o desenvolvimento e com a P.O para validação
+            das tarefas, tanto presencialmente quanto remotamente. Também mantive as informações relacionadas as minhas tarefas
+            atualizadas no Jira e ajudei outros membros da equipe com conhecimentos técnicos que já possuia.
 
-            Também desenvolvi desenvolvi telas relacionadas a visualização e edição dos projetos pelo gestor,
-            e a integração dessas e de outras telas no Frontend.`,
+            Minha participação como desenvolvedor foi principalmente no desenvolvimento Backend com Spring, com a criação do microsserviço de apontamentos,
+            a implementação das filas de mensageria dos 3 serviços com RabbitMQ, e na criação do ambiente de desenvolvimento
+            Docker Compose com todos os serviços e bancos de dados do projeto. Também desenvolvi desenvolvi telas relacionadas
+            a visualização e edição dos projetos pelo gestor, e a integração dessas e de outras telas no Frontend.`,
         desafio:
             "Implementação da arquitetura em microsserviços; Comunicação entre serviços por mensageria; Autenticação via Keycloak.",
-        hardSkills: ["Java", "Spring Boot", "RabbitMQ", "MySQL", "MongoDB", "Docker", "React", "TailwindCSS", "DaisyUI"],
-        softSkills: ["SCRUM", "Metodologia Agíl", "Gestão de projeto em equipe", "Gestão de tempo", "Comunicação"],
+        hardSkills: ["Java", "Spring Boot", "RabbitMQ", "MySQL", "MongoDB", "Docker", "Scrum", "React", "TailwindCSS", "DaisyUI"],
+        softSkills: ["Comunicação", "Input/Feedback", "Análise", "Gestão de Tempo"],
         repo: "https://github.com/fatec-api/java-the-hutt",
         media: "/api-gsw.gif"
     },
@@ -38,8 +45,8 @@ const projetos: Projeto[] = [
             "Sistema Web CRM para gestão dos processos em uma empresa de logística (Newe). O site contempla seções para gerenciar os setores administrativo, comercial e operacional.",
         desafio:
             "Gerenciamento de sessões de usuários simultaneamente; triggers para ações em tempo real no banco; Geração de relatórios em PDF e CSV a partir de dados do próprio sistema.",
-        hardSkills: ["Node.js", "MySQL", "TypeORM", "React", "TailwindCSS"],
-        softSkills: ["SCRUM", "Metodologia Agíl", "Gestão de projeto em equipe", "Gestão de tempo"],
+        hardSkills: ["Node.js", "MySQL", "TypeORM", "Scrum", "React", "TailwindCSS"],
+        softSkills: ["Metodologia Agíl", "Gestão de projeto em equipe", "Gestão de tempo"],
         repo: "https://github.com/gustasvos/kingfisher-fatec-api",
         media: "/api-newe.png"
     },
@@ -49,8 +56,8 @@ const projetos: Projeto[] = [
             "Site com visualização dos dados do comércio exterior dos municípios paulistas. Apresenta dados tratados e filtrados em gráficos para facilitar a análise por período.",
         desafio:
             "Tratamento e processamento de grandes volumes de dados sem comprometer a performance do site.",
-        hardSkills: ["Python", "Pandas", "Flask", "HTML5", "CSS3"],
-        softSkills: ["SCRUM", "Metodologia Agíl", "Gestão de projeto em equipe", "Gestão de tempo"],
+        hardSkills: ["Python", "Pandas", "Scrum", "Flask", "HTML5", "CSS3"],
+        softSkills: ["Metodologia Agíl", "Gestão de projeto em equipe", "Gestão de tempo"],
         repo: "https://github.com/gustasvos/API-Crows",
         media: "/api-comex.gif"
     },
