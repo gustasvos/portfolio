@@ -38,7 +38,7 @@ export default function App() {
                     </p>
                     <div className="flex gap-4">
                         <a href="https://github.com/gustasvos" target="_blank" className="font-mono text-xs text-base-content/40 hover:text-primary transition-colors">GitHub</a>
-                        <a href="https://linkedin.com/in/gustavo-rosa" target="_blank" className="font-mono text-xs text-base-content/40 hover:text-primary transition-colors">LinkedIn</a>
+                        <a href="https://www.linkedin.com/in/gustavo-rosa-46a251180/" target="_blank" className="font-mono text-xs text-base-content/40 hover:text-primary transition-colors">LinkedIn</a>
                         <p className="font-mono text-xs text-base-content/40 hover:text-primary transition-colors cursor-default">gustavorib.rosa@gmail.com</p>
                     </div>
                 </div>
